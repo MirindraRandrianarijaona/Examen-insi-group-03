@@ -1,4 +1,5 @@
 import web
+import nav
 from DB import Db 
 web.config.debug = True
 
@@ -12,7 +13,11 @@ class index:
         db = d.getDb()
         a2=db.select('Album', limit=2)
         result = '<html><head><title>test</title></head>'
+        result = '<html><head><title>Server.py G03</title>'
+        result += '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">'
+        result += '</head>'
         result += '<body>'
+        result += nav.nav()
         for a in a2:
             result += a.Title + ',(' + str(a.ArtistId) + ') <br/>'
         result += '</body></html>'
