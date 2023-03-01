@@ -1,4 +1,6 @@
 import web
+import nav
+from DB import Db 
 web.config.debug = True
 
 urls = (
@@ -7,19 +9,6 @@ urls = (
 
 class index:
     def GET(self):
-<<<<<<< feat/server
-        db = web.database(
-            dbn='mysql',
-            host='tmp-insi.rktmb.org',
-            port=3306,
-            user='insigroup00',
-            pw='insigroup00',
-            db='project00',
-        )
-        a2=db.select('Album', limit=2)
-        result = '<html><head><title>test</title></head>'
-        result += '<body>'
-=======
         d = Db()
         db = d.getDb()
         a2=db.select('Album', limit=10)
@@ -39,7 +28,7 @@ class index:
         result += '<tr><th>Genre</th><th>Artists</th><th>Album</th></tr>'
         result += '</thead>'
         result += '<tbody class="table-primary">'
->>>>>>> local
+        result += nav.nav()
         for a in a2:
             result +='<tr>'
             for genre in genres:
