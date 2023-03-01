@@ -1,4 +1,5 @@
 import web
+from DB import Db 
 web.config.debug = True
 
 urls = (
@@ -7,14 +8,8 @@ urls = (
 
 class index:
     def GET(self):
-        db = web.database(
-            dbn='mysql',
-            host='tmp-insi.rktmb.org',
-            port=3306,
-            user='insigroup00',
-            pw='insigroup00',
-            db='project00',
-        )
+        d = Db()
+        db = d.getDb()
         a2=db.select('Album', limit=2)
         result = '<html><head><title>test</title></head>'
         result += '<body>'
