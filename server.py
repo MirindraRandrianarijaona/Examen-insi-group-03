@@ -1,4 +1,5 @@
 import web
+import nav
 from DB import Db 
 web.config.debug = True
 
@@ -13,6 +14,7 @@ class index:
         a2=db.select('Album', limit=2)
         result = '<html><head><title>test</title></head>'
         result += '<body>'
+        result += nav.nav()
         for a in a2:
             result += a.Title + ',(' + str(a.ArtistId) + ') <br/>'
         result += '</body></html>'
