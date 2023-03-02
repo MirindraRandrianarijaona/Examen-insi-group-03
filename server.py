@@ -25,11 +25,14 @@ class index:
         result += '<h2 style="text-align: center;">Liste principale</h2>'
         result += '<table class="table">'
         result += '<thead class="table-dark">'
-        result += '<tr><th>Genre</th><th>Artists</th><th>Album</th></tr>'
+        result += '<tr><th>Id</th><th>Genre</th><th>Artists</th><th>Album</th></tr>'
         result += '</thead>'
         result += '<tbody class="table-primary">'
         for a in a2:
             result +='<tr>'
+            for albumid in albumids:
+                result +='<td>'+str(albumid.AlbumId)+'</td>'
+                break
             for genre in genres:
                 result +='<td>'+genre.Name+'</td>'
                 break
