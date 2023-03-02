@@ -28,7 +28,6 @@ class index:
         result += '<tr><th>Genre</th><th>Artists</th><th>Album</th></tr>'
         result += '</thead>'
         result += '<tbody class="table-primary">'
-        result += nav.nav()
         for a in a2:
             result +='<tr>'
             for genre in genres:
