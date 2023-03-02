@@ -16,6 +16,7 @@ class index:
         artists=db.select('Artist', limit=10)
         genres=db.select('Genre', limit=10)
         media_types=db.select('MediaType', limit=10)
+        playlists=db.select('Playlist', limit=10)
         result = '<html><head><title>Gestionnaire de musiques</title></head>'
         result = '<html><head><title>Server.py G03</title>'
         result += '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">'
@@ -26,7 +27,7 @@ class index:
         result += '<h2 style="text-align: center;">Liste principale</h2>'
         result += '<table class="table">'
         result += '<thead class="table-dark">'
-        result += '<tr><th>Id</th><th>Genre</th><th>Artists</th><th>Album</th><th>Media type</th></tr>'
+        result += '<tr><th>Id</th><th>Genre</th><th>Artists</th><th>Album</th><th>Media type</th><th>Playlist</th></tr>'
         result += '</thead>'
         result += '<tbody class="table-primary">'
         for a in a2:
@@ -42,6 +43,9 @@ class index:
                 break
             for media_type in media_types:
                 result +='<td>'+media_type.Name+'</td>'
+                break
+            for playlist in playlists:
+                result +='<td>'+playlist.Name+'</td>'
                 break
             result +='<td>'+a.Title+'</td>'
             result +='</tr>'
