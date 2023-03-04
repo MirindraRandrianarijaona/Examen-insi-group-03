@@ -1,10 +1,23 @@
 import web
 import nav
-from DB import Db 
+from DB import Db
+from album import album
+from artist import artist
+from genre import genre
+from track import track
+from media_type import media
+from playlist import playlist 
 web.config.debug = True
 
 urls = (
-    '/', 'index'
+    '/', 'index',
+    '/index','index',
+    '/album', 'album',
+    '/artist', 'artist',
+    '/genre', 'genre',
+    '/track', 'track',
+    '/playlist', 'playlist',
+    '/media', 'media'
 )
 
 class index:
@@ -19,7 +32,7 @@ class index:
         playlists=db.select('Playlist', limit=10)
         tracks=db.select('Track', limit=10)
         result = '<html><head><title>Gestionnaire de musiques</title></head>'
-        result = '<html><head><title>Server.py G03</title>'
+        result += '<html><head><title>Server.py G03</title>'
         result += '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">'
         result += '</head>'
         result += '<body>'
