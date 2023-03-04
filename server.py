@@ -39,7 +39,7 @@ class index:
         result += nav.nav()
         result += '<div class="container">'
         result += '<h2 style="text-align: center;">Liste principale</h2>'
-        result += '<table class="table">'
+        result += '<table class="table text-center">'
         result += '<thead class="table-dark">'
         result += '<tr><th>Id</th><th>Genre</th><th>Artists</th><th>Album</th><th>Track</th><th>Media type</th><th>Playlist</th></tr>'
         result += '</thead>'

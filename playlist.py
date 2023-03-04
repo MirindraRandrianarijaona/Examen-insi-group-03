@@ -22,7 +22,7 @@ class playlist:
         result += nav.nav()
         result += '<div class="container">'
         result += '<h2 style="text-align: center;">Liste des playlists</h2>'
-        result += '<table class="table">'
+        result += '<table class="table text-center">'
         result += '<thead class="table table-dark">'
         result += '<tr><th>Id</th><th>Playlist</th></tr>'
         result += '</thead>'
